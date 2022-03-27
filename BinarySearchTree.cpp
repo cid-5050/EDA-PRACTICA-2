@@ -42,7 +42,7 @@ void BinarySearchTree<Comparable>::remove(const Comparable& x)
 // Remove minimum item from the tree.
 // Throws UnderflowException if tree is empty.
 template <class Comparable>
-void BinarySearchTree<Comparable>::removeMin()#include "BinarySearchTree.h"
+void BinarySearchTree<Comparable>::removeMin();
 #include "Except.h"
 
 

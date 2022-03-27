@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-int main() {
+int main(){
     BinarySearchTree<int> s;
     s.insert(2);
     s.insert(4);
@@ -10,7 +10,10 @@ int main() {
     s.insert(9);
     s.insert(7);
 
-    std::cout << s.findMin().get() << std::endl;
+    //s.removeMin();
+
+    //std::cout << s.find(9).get() << std::endl;
+    //std::cout << s.find(1).get() << std::endl;
 
     return 0;
 }
