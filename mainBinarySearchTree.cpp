@@ -11,13 +11,17 @@ int main(){
     s.insert(4);
     s.insert(5);
     s.insert(6);
-    cout << s.findMin().get() << endl;
+    //cout << s.findMin().get() << endl;
     //s.removeMin();
-    cout << s.findMin().get() << endl;
-    cout << s.findMax().get() << endl;
-    s.removeMax();
-    cout << s.findMax().get() << endl;
-    s.removeLessThan(5);
-    cout << s.find(5).get() << endl;
+    //cout << s.findMin().get() << endl;
+    //cout << s.findMax().get() << endl;
+    //s.removeMax();
+    //cout << s.findMax().get() << endl;
+
+    cout << s.size() << endl;
+    s.insert(7);
+    s.insert(8);
+    cout << s.size() << endl;
+
     return 0;
 }

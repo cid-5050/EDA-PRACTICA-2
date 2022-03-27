@@ -386,9 +386,27 @@ void BinarySearchTreeWithRank<Comparable>::removeMax(Node*& t) const
 }
 
 template <class Comparable>
+int BinarySearchTree<Comparable>::size()
+{
+    size(root);
+}
+
+template <class Comparable>
 int BinarySearchTree<Comparable>::size(Node *& t ) const
 {
-    return 0;
+    if (t == NULL)
+        return 0;
+    else
+        return(size(t->left) + 1 + size(t->right));
+}
+
+template <class Comparable>
+int BinarySearchTreeWithRank<Comparable>::size(Node *& t ) const
+{
+    if (t == NULL)
+        return 0;
+    else
+        return(size(t->left) + 1 + size(t->right));
 }
 
 template <class Comparable>

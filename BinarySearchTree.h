@@ -133,6 +133,8 @@ class BinarySearchTreeWithRank : public BinarySearchTree<Comparable>
       { BinarySearchTree<Comparable>::removeMax( ); }
     void removeLessThan( const Comparable & x )
       { BinarySearchTree<Comparable>::removeLessThan( x ); }
+    int size( )
+      { BinarySearchTree<Comparable>::size( ); }
 
     typedef BinaryNode<Comparable> Node;
 
@@ -141,6 +143,7 @@ class BinarySearchTreeWithRank : public BinarySearchTree<Comparable>
     void remove( const Comparable & x, Node * & t ) const;
     void removeMin( Node * & t ) const;
     void removeMax( Node * & t ) const;
+    int size(Node * & t) const;
     void removeLessThan( const Comparable & x, Node * & t ) const;
     Node *findKth( int k, Node *t ) const;
 
