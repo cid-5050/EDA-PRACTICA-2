@@ -43,13 +43,6 @@ class BinaryNode
 // ******************ERRORS********************************
 // Exceptions are thrown by insert, remove, and removeMin if warranted
 
-// PRACTICA2
-// void removeMax( )      --> Remove bigger item
-// int size( )            --> Return size tree
-// removeLessThan( )      -->
-// prune( )               -->
-// next( )                -->
-
 template <class Comparable>
 class BinarySearchTree
 {
@@ -125,5 +118,5 @@ class BinarySearchTreeWithRank : public BinarySearchTree<Comparable>
 };
 
 
-#include "BinarySearchTree.cpp"
+// #include "BinarySearchTree.cpp"
 #endif

@@ -1,9 +1,15 @@
-#include <iostream>
+#include "BinarySearchTree.h"
+#include "Wrapper.h"
+#include "Except.h"
 
-using namespace std;
+#ifdef USE_DOT_H
+    #include <iostream.h>
+#else
+    #include <iostream>
+    using namespace std;
+#endif
 
-int main2()
-{
-    cout << "Hello World!" << endl;
-    return 0;
+// Test program
+int main( ) {
+
 }

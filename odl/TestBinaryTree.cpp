@@ -21,7 +21,7 @@ void testItr( TreeIterator<Object> & itr )
       { cout << e.toString( ) << endl; }
 }
 
-int main( )
+int main2( )
 {
     BinaryTree<int> t1( 1 );
     BinaryTree<int> t3( 3 );
