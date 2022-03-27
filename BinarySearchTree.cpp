@@ -400,7 +400,7 @@ void BinarySearchTree<Comparable>::removeMax(Node*& t) const
     {
         //FALTA CAMBIAR
         Node* tmp = t;
-        t = t->right;
+        t = t->left;
         delete tmp;
     }
 }
