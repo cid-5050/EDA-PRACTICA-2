@@ -392,9 +392,58 @@ int BinarySearchTree<Comparable>::size(Node *& t ) const
 }
 
 template <class Comparable>
-void BinarySearchTree<Comparable>::removeLessThan(const Comparable & x, Node *& t) const
+void BinarySearchTree<Comparable>::removeLessThan(const Comparable& x)
 {
+    removeLessThan(x, root);
+}
 
+template <class Comparable>
+void BinarySearchTree<Comparable>::
+removeLessThan(const Comparable & x, Node *& t) const
+{
+    if (t->left == NULL)
+        throw ItemNotFoundException();
+    if (x < t->left->element)
+        remove(x, t->left->left);
+    else if (t->left->element < x)
+        remove(x, t->left->right);
+    else if (t->left->left != NULL && t->left->right != NULL) // Two children
+    {
+        t->left->element = findMin(t->left->right)->element;
+        removeMin(t->left->right);                   // Remove minimum
+    }
+    else
+    {
+        BinaryNode<Comparable>* oldNode = t->left;
+        t->left = (t->left->left != NULL) ? t->left->left : t->left->right;  // Reroot t
+        delete oldNode;                         // delete old root
+    }
+}
+
+template <class Comparable>
+void BinarySearchTreeWithRank<Comparable>::
+removeLessThan(const Comparable& x, Node*& t) const
+{
+    if (t->left == NULL)
+        throw ItemNotFoundException();
+    if (x < t->left->element)
+        remove(x, t->left->left);
+    else if (t->left->element < x)
+        remove(x, t->left->right);
+    else if (t->left->left != NULL && t->left->right != NULL) // Two children
+    {
+        t->left->element = findMin(t->left->right)->element;
+        removeMin(t->left->right);                   // Remove minimum
+    }
+    else
+    {
+        BinaryNode<Comparable>* oldNode = t->left;
+        t->left = (t->left->left != NULL) ? t->left->left : t->left->right;  // Reroot t
+        delete oldNode;                         // delete old root
+        return;
+    }
+
+    t->size--;
 }
 
 template <class Comparable>
@@ -406,5 +455,6 @@ void BinarySearchTree<Comparable>::prune( Node *& t ) const
 template <class Comparable>
 BinaryNode<Comparable>* BinarySearchTree<Comparable>::next( const Comparable & x, Node *& t ) const
 {
+
     return t;
 }
