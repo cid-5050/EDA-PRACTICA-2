@@ -346,6 +346,12 @@ BinarySearchTreeWithRank<Comparable>::findKth(int k, Node* t) const
 
 //PRACTICA 2
 template <class Comparable>
+void BinarySearchTree<Comparable>::removeMax()
+{
+    removeMax(root);
+}
+
+template <class Comparable>
 void BinarySearchTree<Comparable>::removeMax(Node*& t) const
 {
     if (t == NULL)
@@ -356,9 +362,27 @@ void BinarySearchTree<Comparable>::removeMax(Node*& t) const
     {
         //FALTA CAMBIAR
         Node* tmp = t;
-        t = t->right;
+        t = t->left;
         delete tmp;
     }
+}
+
+template <class Comparable>
+void BinarySearchTreeWithRank<Comparable>::removeMax(Node*& t) const
+{
+    if (t == NULL)
+        throw UnderflowException();
+    else if (t->right != NULL)
+        removeMax(t->right);
+    else
+    {
+        Node* tmp = t;
+        t = t->left;
+        delete tmp;
+        return;
+    }
+
+    t->size--;
 }
 
 template <class Comparable>
